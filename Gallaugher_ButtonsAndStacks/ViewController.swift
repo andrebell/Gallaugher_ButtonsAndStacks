@@ -8,12 +8,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var colorLabel: UILabel!
+    
+    var color: [UIColor] = [.systemRed, .systemOrange, .systemYellow, .systemGreen, .systemBlue, .systemIndigo, .systemPurple]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func colorButtonPressed(_ sender: UIButton) {
+        colorLabel.text = "You clicked \(sender.currentTitle!)"
+        colorLabel.textColor = color[sender.tag]
+    }
 }
 
