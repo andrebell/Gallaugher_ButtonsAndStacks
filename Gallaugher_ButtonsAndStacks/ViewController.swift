@@ -17,8 +17,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func colorButtonPressed(_ sender: UIButton) {
-        colorLabel.text = "You clicked \(sender.currentTitle!)"
-        colorLabel.textColor = color[sender.tag]
+        if sender.tag >= 0 && sender.tag <= 6 {
+            colorLabel.text = "You clicked \(sender.currentTitle!)"
+            colorLabel.textColor = color[sender.tag]
+        } else {
+            colorLabel.text = ""
+        }
     }
 }
 
